@@ -3,7 +3,7 @@
 import logging
 import httpx
 from typing import Dict, Any, List
-from ..config import get_api_token
+from ..config import get_api_token, DUFFEL_API_VERSION
 from .endpoints import OfferEndpoints
 
 class DuffelClient:
@@ -20,7 +20,7 @@ class DuffelClient:
         self.headers = {
             "Accept": "application/json",
             "Accept-Encoding": "gzip",
-            "Duffel-Version": "v1",
+            "Duffel-Version": DUFFEL_API_VERSION,
             "Authorization": f"Bearer {self._token}",
             "Content-Type": "application/json"
         }
